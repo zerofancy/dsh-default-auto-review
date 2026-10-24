@@ -1,0 +1,18 @@
+# Local-only installation backups and runtime evidence
+installation-backup/
+verification/
+scripts/check-installation.mjs
+scripts/diagnose-live-host.js
+scripts/verify-live-host.js
+
+# Dependencies, secrets, transient files and archives
+node_modules/
+.env
+.env.*
+!.env.example
+.dsh/
+*.log
+*.tmp
+*.tgz
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Default Auto Review",
+    "description": "Select built-in Auto review for new top-level conversations without changing restored sessions, forks, child agents, or later manual choices."
+  }
+}

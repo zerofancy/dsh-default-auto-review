@@ -1,0 +1,41 @@
+{
+  "name": "@local/dsh-default-auto-review",
+  "version": "0.1.1",
+  "private": true,
+  "description": "Use built-in Auto review for genuinely new top-level conversations; preserve restored sessions and delegated permissions.",
+  "type": "module",
+  "license": "MIT",
+  "author": "zerofancy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zerofancy/dsh-default-auto-review.git"
+  },
+  "homepage": "https://github.com/zerofancy/dsh-default-auto-review#readme",
+  "bugs": {
+    "url": "https://github.com/zerofancy/dsh-default-auto-review/issues"
+  },
+  "keywords": ["deepseek-harness", "dsh-plugin", "auto-review", "permissions"],
+  "icon": "./icon.svg",
+  "engines": { "node": ">=22", "dsh": "0.2.1-rc.3" },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "core.js", "client.js", "client-core.js", "scripts/build-client.mjs", "cordis.patch.yml", "locale", "icon.svg", "README.md", "LICENSE"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "inject": ["@deepseek-ai/dsh-client-ui-workspace", "@deepseek-ai/dsh-api-session-controller"],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "test": "node --test --test-isolation=none test/*.test.js",
+    "test:integration": "node --test --test-isolation=none test-integration/*.test.js"
+  }
+}

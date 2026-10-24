@@ -1,0 +1,4 @@
+- insert:
+    - id: local-default-auto-review-v011
+      name: './index.js'
+      config: {}
